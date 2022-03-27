@@ -1,1 +1,0 @@
---debug "all" -L "simprims_ver" "tb" "glbl" 
