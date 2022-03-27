@@ -1,0 +1,86 @@
+#-----------------------------------------------------------
+# xsim v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Tue Mar 15 23:18:05 2022
+# Process ID: 224
+# Current directory: /work/count_ones
+# Command line: xsim -mode tcl -source {xsim.dir/work.tb/xsim_script.tcl}
+# Log file: /work/count_ones/xsim.log
+# Journal file: /work/count_ones/xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/work.tb/xsim_script.tcl
+# xsim {work.tb} -autoloadwcfg -runall
+Time resolution is 1 ns
+run -all
+                   0:in =  0,out=0
+                 120:valid_bits=1
+                 130:in =  1,out=1
+                 140:in =  2,out=0
+                 150:in =  3,out=1
+                 160:in =  4,out=0
+                 170:in =  5,out=1
+                 180:in =  6,out=0
+                 190:in =  7,out=1
+                 200:in =  8,out=0
+                 210:in =  9,out=1
+                 220:in = 10,out=0
+                 230:in = 11,out=1
+                 240:in = 12,out=0
+                 250:in = 13,out=1
+                 260:in = 14,out=0
+                 270:in = 15,out=1
+                 280:valid_bits=2
+                 280:in =  0,out=0
+                 290:in =  1,out=1
+                 300:in =  2,out=1
+                 310:in =  3,out=2
+                 320:in =  4,out=0
+                 330:in =  5,out=1
+                 340:in =  6,out=1
+                 350:in =  7,out=2
+                 360:in =  8,out=0
+                 370:in =  9,out=1
+                 380:in = 10,out=1
+                 390:in = 11,out=2
+                 400:in = 12,out=0
+                 410:in = 13,out=1
+                 420:in = 14,out=1
+                 430:in = 15,out=2
+                 440:valid_bits=3
+                 440:in =  0,out=0
+                 450:in =  1,out=1
+                 460:in =  2,out=1
+                 470:in =  3,out=2
+                 480:in =  4,out=1
+                 490:in =  5,out=2
+                 500:in =  6,out=2
+                 510:in =  7,out=3
+                 520:in =  8,out=0
+                 530:in =  9,out=1
+                 540:in = 10,out=1
+                 550:in = 11,out=2
+                 560:in = 12,out=1
+                 570:in = 13,out=2
+                 580:in = 14,out=2
+                 590:in = 15,out=3
+                 600:valid_bits=4
+                 600:in =  0,out=0
+                 610:in =  1,out=1
+                 620:in =  2,out=1
+                 630:in =  3,out=2
+                 640:in =  4,out=1
+                 650:in =  5,out=2
+                 660:in =  6,out=2
+                 670:in =  7,out=3
+                 680:in =  8,out=1
+                 690:in =  9,out=2
+                 700:in = 10,out=2
+                 710:in = 11,out=3
+                 720:in = 12,out=2
+                 730:in = 13,out=3
+                 740:in = 14,out=3
+                 750:in = 15,out=4
+$finish called at time : 760 ns : File "/work/count_ones/tb.sv" Line 34
+exit
+INFO: [Common 17-206] Exiting xsim at Tue Mar 15 23:18:23 2022...

@@ -1,0 +1,49 @@
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |LUT2     |     5|
+|3     |LUT3     |     5|
+|4     |LUT4     |     3|
+|5     |LUT5     |     2|
+|6     |LUT6     |     4|
+|7     |RAM32M   |     1|
+|8     |RAM32X1D |     2|
+|9     |FDRE     |    26|
+|10    |IBUF     |     4|
+|11    |OBUF     |     9|
++------+---------+------+
+
+Report Instance Areas: 
++------+--------------+-------+------+
+|      |Instance      |Module |Cells |
++------+--------------+-------+------+
+|1     |top           |       |    62|
+|2     |  fifo_inst   |fifo   |    17|
+|3     |  sink_inst   |sink   |    11|
+|4     |  source_inst |source |    20|
++------+--------------+-------+------+
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 sink_inst/captured_data_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            captured_data[0]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        4.090ns  (logic 3.287ns (80.370%)  route 0.803ns (19.630%))
+  Logic Levels:           2  (FDRE=1 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         FDRE                         0.000     0.000 r  sink_inst/captured_data_reg[0]/C
+                         FDRE (Prop_fdre_C_Q)         0.478     0.478 r  sink_inst/captured_data_reg[0]/Q
+                         net (fo=1, unplaced)         0.803     1.281    captured_data_OBUF[0]
+                         OBUF (Prop_obuf_I_O)         2.809     4.090 r  captured_data_OBUF[0]_inst/O
+                         net (fo=0)                   0.000     4.090    captured_data[0]
+                                                                      r  captured_data[0] (OUT)
+  -------------------------------------------------------------------    -------------------

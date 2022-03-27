@@ -1,0 +1,30 @@
+#-----------------------------------------------------------
+# xsim v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Tue Mar 15 23:14:50 2022
+# Process ID: 595
+# Current directory: /work/allocator
+# Command line: xsim -mode tcl -source {xsim.dir/work.tb/xsim_script.tcl}
+# Log file: /work/allocator/xsim.log
+# Journal file: /work/allocator/xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/work.tb/xsim_script.tcl
+# xsim {work.tb} -autoloadwcfg -runall
+Time resolution is 1 ns
+run -all
+                   0:QValid = xxxx,alloc=0, dealloc=0
+                 135:QValid = 0000,alloc=0, dealloc=0
+                 235:QValid = 0000,alloc=1, dealloc=0
+                 245:QValid = 0001,alloc=1, dealloc=0
+                 255:QValid = 0011,alloc=1, dealloc=0
+                 265:QValid = 0111,alloc=1, dealloc=0
+                 275:QValid = 1111,alloc=0, dealloc=0
+                 285:QValid = 1111,alloc=0, dealloc=1
+                 295:QValid = 0111,alloc=0, dealloc=1
+                 305:QValid = 0011,alloc=0, dealloc=1
+                 315:QValid = 0001,alloc=0, dealloc=1
+                 325:QValid = 0000,alloc=0, dealloc=0
+$finish called at time : 425 ns : File "/work/allocator/tb.sv" Line 53
+exit
+INFO: [Common 17-206] Exiting xsim at Tue Mar 15 23:15:08 2022...

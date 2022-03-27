@@ -1,0 +1,35 @@
+With 64 requestors
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     1|
+|2     |LUT2 |    29|
+|3     |LUT3 |    19|
+|4     |LUT4 |    30|
+|5     |LUT5 |    64|
+|6     |LUT6 |   317|
+|7     |FDRE |     6|
+|8     |IBUF |    66|
+|9     |OBUF |    64|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |   596|
++------+---------+-------+------+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 req[3]
+                            (input port)
+  Destination:            rr_ptr_reg[0]/CE
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        22.557ns  (logic 4.435ns (19.663%)  route 18.122ns (80.337%))
+  Logic Levels:           29  (IBUF=1 LUT3=1 LUT6=27)
+  

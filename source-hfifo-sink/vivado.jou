@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Sat Mar 19 16:24:42 2022
+# Process ID: 5876
+# Current directory: /work/source-hfifo-sink
+# Command line: vivado -mode tcl -source cmd_synth.tcl
+# Log file: /work/source-hfifo-sink/vivado.log
+# Journal file: /work/source-hfifo-sink/vivado.jou
+#-----------------------------------------------------------
+source cmd_synth.tcl

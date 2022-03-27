@@ -1,0 +1,50 @@
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |LUT1     |     2|
+|3     |LUT2     |     2|
+|4     |LUT3     |     3|
+|5     |LUT4     |     4|
+|6     |LUT5     |     4|
+|7     |LUT6     |     5|
+|8     |RAM32M   |     1|
+|9     |RAM32X1D |     2|
+|10    |FDRE     |    23|
+|11    |IBUF     |     4|
+|12    |OBUF     |     9|
++------+---------+------+
+
+Report Instance Areas: 
++------+--------------+-------+------+
+|      |Instance      |Module |Cells |
++------+--------------+-------+------+
+|1     |top           |       |    60|
+|2     |  fifo_inst   |fifo   |    20|
+|3     |  sink_inst   |sink   |     9|
+|4     |  source_inst |source |    17|
++------+--------------+-------+------+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 sink_inst/captured_data_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            captured_data[0]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        4.090ns  (logic 3.287ns (80.370%)  route 0.803ns (19.630%))
+  Logic Levels:           2  (FDRE=1 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         FDRE                         0.000     0.000 r  sink_inst/captured_data_reg[0]/C
+                         FDRE (Prop_fdre_C_Q)         0.478     0.478 r  sink_inst/captured_data_reg[0]/Q
+                         net (fo=1, unplaced)         0.803     1.281    captured_data_OBUF[0]
+                         OBUF (Prop_obuf_I_O)         2.809     4.090 r  captured_data_OBUF[0]_inst/O
+                         net (fo=0)                   0.000     4.090    captured_data[0]
+                                                                      r  captured_data[0] (OUT)
+  -------------------------------------------------------------------    -------------------
+  

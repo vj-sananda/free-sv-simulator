@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# xsim v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Sat Mar 19 16:06:33 2022
+# Process ID: 4649
+# Current directory: /work/source-readyvalid-sink
+# Command line: xsim -mode tcl -source {xsim.dir/work.tb#work.glbl/xsim_script.tcl}
+# Log file: /work/source-readyvalid-sink/xsim.log
+# Journal file: /work/source-readyvalid-sink/xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/work.tb#work.glbl/xsim_script.tcl
+# xsim {work.tb#work.glbl} -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+            21555000:captured_data_count =         841
+TEST PASSED
+$finish called at time : 21555 ns : File "/work/source-readyvalid-sink/tb.sv" Line 40
+run: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 2601.113 ; gain = 0.000 ; free physical = 1884 ; free virtual = 4329
+exit
+INFO: [Common 17-206] Exiting xsim at Sat Mar 19 16:06:56 2022...

@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# xsim v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Tue Mar 15 22:05:02 2022
+# Process ID: 14440
+# Current directory: /work/arbiter-v3
+# Command line: xsim -mode tcl -source {xsim.dir/work.tb/xsim_script.tcl}
+# Log file: /work/arbiter-v3/xsim.log
+# Journal file: /work/arbiter-v3/xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/work.tb/xsim_script.tcl
+run -all

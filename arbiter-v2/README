@@ -1,0 +1,36 @@
+With 64 requestors
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     1|
+|2     |LUT2 |    29|
+|3     |LUT3 |    11|
+|4     |LUT4 |    11|
+|5     |LUT5 |    23|
+|6     |LUT6 |   361|
+|7     |FDRE |     5|
+|8     |FDSE |     3|
+|9     |IBUF |    66|
+|10    |OBUF |    64|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |   574|
++------+---------+-------+------+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 last_gnt_addr_reg[3]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            gnt[59]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        10.656ns  (logic 4.399ns (41.283%)  route 6.257ns (58.717%))
+  Logic Levels:           11  (FDRE=1 LUT4=1 LUT6=8 OBUF=1)
