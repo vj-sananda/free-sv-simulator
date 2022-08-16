@@ -1,0 +1,18 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# 
+# Start of session at: Tue Jun  7 22:50:30 2022
+# Process ID: 240
+# Current directory: /work
+# Command line: vivado -mode tcl
+# Log file: /work/vivado.log
+# Journal file: /work/vivado.jou
+#-----------------------------------------------------------
+help
+help -category synthesis
+help synthesis
+help -category synthesis
+help create_project
+help synthesize_design
+quit

@@ -1,0 +1,35 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# 
+# Start of session at: Mon Aug  1 22:51:41 2022
+# Process ID: 264
+# Current directory: /work/constant_mult
+# Command line: vivado -mode tcl -source cmd_synth.tcl
+# Log file: /work/constant_mult/vivado.log
+# Journal file: /work/constant_mult/vivado.jou
+#-----------------------------------------------------------
+source cmd_synth.tcl
+# read_verilog -sv constant_mult.sv
+# synth_design -top constant_mult -part xc7a100tcsg324-1
+Command: synth_design -top constant_mult -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 271
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2427.336 ; gain = 0.000 ; free physical = 872 ; free virtual = 3619
+---------------------------------------------------------------------------------
+ERROR: [Synth 8-439] module 'constant_mult' not found
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2427.336 ; gain = 0.000 ; free physical = 506 ; free virtual = 3253
+---------------------------------------------------------------------------------
+synthesize failed
+INFO: [Common 17-83] Releasing license: Synthesis
+5 Infos, 0 Warnings, 0 Critical Warnings and 2 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Vivado Synthesis failed
+quit
+INFO: [Common 17-206] Exiting Vivado at Mon Aug  1 22:52:20 2022...

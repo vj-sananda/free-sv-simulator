@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# 
+# Start of session at: Tue Jun  7 22:52:36 2022
+# Process ID: 281
+# Current directory: /work
+# Command line: vivado -mode tcl
+# Log file: /work/vivado.log
+# Journal file: /work/vivado.jou
+#-----------------------------------------------------------
+help synth_design
+help opt_design
+help write_verilog
+help phys_opt_design
+help power_opt_design
+help report_power
+help read_saif
+quit
