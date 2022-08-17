@@ -10,18 +10,19 @@
 import riscv_package::*;
 
 module riscv_alu(
-                 input logic [31:0] a,
-                 input logic [31:0] b,
- 				 input logic [4:0] shift,
-                 input alu_func_t alu_func,
-                 input branch_t branch,
+                 input logic [31:0]  a,
+                 input logic [31:0]  b,
+ 		 input logic [4:0]   shift,
+                 input 		     alu_func_t alu_func,
+                 input 		     branch_t branch,
                  output logic [31:0] result,//Arithmetic result
-                 output logic br_result //Branch result (boolean)
+                 output logic 	     br_result //Branch result (boolean)
                 );
     
   
   always_comb begin
-    result = '0;
+     result = '0;
+     br_result = 0;
     case(alu_func)
         ADD:  result = a + b;
  	    SUB:  result = a - b;
