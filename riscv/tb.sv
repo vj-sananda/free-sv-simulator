@@ -16,7 +16,7 @@ module tb;
   logic [29:0] mem_addr,pc;
   logic        mem_write;
    
-  riscv cpu(.*);
+  system system_inst(.*);
   
   initial begin
     $dumpfile("dump.vcd");$dumpvars;
@@ -43,8 +43,8 @@ module tb;
       for(int i=0;i<32;i++) begin
 	 $display("\tx%0d = 0x%h (%0d)",
 		  i,
-		  cpu.regfile_inst.regfile[i],
-		  cpu.regfile_inst.regfile[i]
+		  system_inst.cpu.regfile_inst.regfile[i],
+		  system_inst.cpu.regfile_inst.regfile[i]
 		  );
       end
       $display("-------------------------------");      
