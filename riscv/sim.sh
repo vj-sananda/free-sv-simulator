@@ -1,4 +1,7 @@
 xvlog -sv riscv.sv
+[ $? -ne 0 ] && exit
+
+xvlog -sv system.sv
 #exit if the command above fails
 [ $? -ne 0 ] && exit
 

@@ -1,7 +1,7 @@
 //SBC RISCV CPU
 `timescale 1ns/1ns
 
-`include "riscv.sv"
+`include "dpram.sv"
 `include "dpram_sparse.sv"
 
 module system ( input logic clk,rst,
@@ -10,11 +10,6 @@ module system ( input logic clk,rst,
 	        output logic        mem_write
                 );
 
-   //logic [31:0] instr,mem_write_data,mem_read_data;
-   //Only address by full dwords
-   //logic [29:0] mem_addr,pc;
-   //logic        mem_write;
-   
   //Instruction and data in dual port
   //SRAM
   //
@@ -22,10 +17,10 @@ module system ( input logic clk,rst,
   //Port 1, read and write port for data
   //
   //1024(1K) x 32 bit wide SRAM
-  dpram #(1024,32) mem
+  //dpram #(1024,32) mem
 
   //Sparse memory for full 32 bit address space
-  //dpram_sparse #(32,30) mem    
+  dpram_sparse #(32,30) mem    
   (.clk0(clk),
    .clk1(clk),
    
