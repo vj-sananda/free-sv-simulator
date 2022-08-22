@@ -39,9 +39,10 @@ module tb;
 
    `ifndef GATES
    function void dump_regfile();
-      $display("-------------------------------");            
-      for(int i=0;i<32;i++) begin
-	 $display("\tx%0d = 0x%h (%0d)",
+      $display("-------------------------------");
+      $display("\tx 0 = 0x00000000 (0)");
+      for(int i=1;i<32;i++) begin
+	 $display("\tx%2d = 0x%8h (%0d)",
 		  i,
 		  system_inst.cpu.regfile_inst.regfile[i],
 		  system_inst.cpu.regfile_inst.regfile[i]

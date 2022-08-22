@@ -1,3 +1,15 @@
+
+if [ "$#" -ne 1 ]; then
+cat<<EOF
+
+usage: sim.sh <machine-code-file>
+
+EOF
+exit
+fi
+
+cp $1 mem.txt
+
 xvlog -sv riscv.sv
 [ $? -ne 0 ] && exit
 

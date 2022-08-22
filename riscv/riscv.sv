@@ -157,12 +157,12 @@ module riscv ( input  logic clk,rst,
 	 end
 
 	 if (decode.opcode == OP_UJ_JAL) begin
-	    rd_data = pc + 4;
+	    rd_data = (pc << 2) + 4;
 	    nxt_state = p3_REG_WRITE;
 	 end
 
 	 if (decode.opcode == OP_I_JALR) begin
-	    rd_data = pc + 4;
+	    rd_data = (pc << 2) + 4;
 	    nxt_state = p3_REG_WRITE;
 	 end	 	 	 
  
@@ -181,13 +181,13 @@ module riscv ( input  logic clk,rst,
 	case(decode.opcode)
 	  OP_I_LOAD: rd_data = mem_read_data;
 	  OP_U_LUI:  rd_data = decode.imm;
-	  OP_U_AUIPC: rd_data = pc + decode.imm;
+	  OP_U_AUIPC: rd_data = (pc << 2) + decode.imm;
 	  OP_UJ_JAL: begin
-	     rd_data = pc + 4;
+	     rd_data = (pc << 2) + 4;
 	     nxt_pc = pc + {{11{decode.imm[20]}},decode.imm[20:2]};
 	  end
 	  OP_I_JALR: begin
-	     rd_data = pc + 4;
+	     rd_data = (pc << 2) + 4;
 	     $cast(rs1_addr,decode.rs1);
 	     nxt_pc = pc + rs1_data + {{18{decode.imm[11]}},decode.imm[11:0]};
 	  end
