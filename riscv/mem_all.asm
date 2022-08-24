@@ -1,4 +1,4 @@
-	add x0,x0,x0
+	add  x0,x0,x0
 	addi x1,x0,0x1
 	add  x2,x1,x1
 	addi x3,x0,0x4
