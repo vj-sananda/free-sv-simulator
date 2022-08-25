@@ -30,9 +30,9 @@ module tb;
     
     ##100;
 
-    `ifndef GATES
+     `ifndef GATES
      dump_regfile();
-    `endif
+     `endif
      
     $finish;
   end
@@ -50,7 +50,7 @@ module tb;
       end
       $display("-------------------------------");      
    endfunction // dump_regfile
-   `endif
-  
+   `endif //  `ifndef GATES
+   
 endmodule
 
