@@ -6,7 +6,11 @@
 `include "riscv_regfile.sv"
 
 import riscv_package::*;
-
+//
+//1-Cycle implementation with "Magic Memory" in MIT 6.004 parlance
+//Memory is dual ported (like 2 memories) and read data is available
+//combinationally when address is presented.
+//
 module riscv ( input  logic clk,rst,
 	       input  logic [31:0]  instr,mem_read_data,
 	       output logic [31:0] mem_write_data,
