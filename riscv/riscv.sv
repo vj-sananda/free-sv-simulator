@@ -67,7 +67,7 @@ module riscv ( input  logic clk,rst,
   
   always_ff @(posedge clk)
     if (rst) begin
-  	state <= p0_FETCH;
+  	state <= p1_DECODE_EXECUTE;
       	pc <= '0;
     end	
     else begin
@@ -100,18 +100,17 @@ module riscv ( input  logic clk,rst,
      alu_func = alu_func_r;
      
     case(state)
-      p0_FETCH: begin
-        nxt_state = p1_DECODE_EXECUTE;        
-      end
-      
+
       p1_DECODE_EXECUTE: begin
+
+        nxt_state = p1_DECODE_EXECUTE;        
+
         if (decode.i_type == R_TYPE) begin
        	 $cast(rs1_addr,decode.rs1);	
        	 $cast(rs2_addr,decode.rs2);
          a = rs1_data;
          b = rs2_data;
          alu_func = decode.alu_func;
-         nxt_state = p3_REG_WRITE;
         end
         
         if (decode.opcode == OP_I_ARITH) begin
@@ -119,7 +118,6 @@ module riscv ( input  logic clk,rst,
          a = rs1_data;
          b = decode.imm;
          alu_func = decode.alu_func;
-         nxt_state = p3_REG_WRITE;           
         end
 
         if (decode.opcode == OP_I_LOAD) begin
@@ -128,7 +126,6 @@ module riscv ( input  logic clk,rst,
          b = decode.imm;
          alu_func = ADD;
          mem_addr = result ;
-         nxt_state = p3_REG_WRITE;           
         end
 
         if (decode.opcode == OP_S_STORE) begin
@@ -140,39 +137,29 @@ module riscv ( input  logic clk,rst,
          mem_addr = result ;
          mem_write_data = rs2_data;
          mem_write = 1;
-         nxt_state = p3_REG_WRITE;
         end // if (decode.opcode == OP_S_STORE)
 
          if (decode.opcode == OP_SB_BRANCH) begin
-            nxt_state = p3_REG_WRITE;
+
          end        
 
 	 if (decode.opcode == OP_U_LUI) begin
 	    rd_data = decode.imm;
-	    nxt_state = p3_REG_WRITE;
+
 	 end
 
 	 if (decode.opcode == OP_U_AUIPC) begin
-	    nxt_state = p3_REG_WRITE;
+
 	 end
 
 	 if (decode.opcode == OP_UJ_JAL) begin
 	    rd_data = (pc << 2) + 4;
-	    nxt_state = p3_REG_WRITE;
 	 end
 
 	 if (decode.opcode == OP_I_JALR) begin
 	    rd_data = (pc << 2) + 4;
-	    nxt_state = p3_REG_WRITE;
 	 end	 	 	 
  
-      end
-      
-      p2_MEM_ACCESS: begin
-      end
-      
-      p3_REG_WRITE: begin
-
          //Default increment of pc by 1
          nxt_pc = pc + 1 ;
          
@@ -209,8 +196,8 @@ module riscv ( input  logic clk,rst,
 	endcase // case (decode.opcode)
 
         reg_write_enable = 1;
-        nxt_state = p0_FETCH;
-      end
+
+      end // case: p1_DECODE_EXECUTE
       
     endcase
   end

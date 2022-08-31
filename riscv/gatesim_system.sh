@@ -1,10 +1,7 @@
 xvlog -sv --define GATES tb.sv
 [ $? -ne 0 ] && exit
 
-xvlog -sv system.sv 
-[ $? -ne 0 ] && exit
-
-xvlog -sv riscv_gates.sv 
+xvlog -sv system_gates.sv 
 [ $? -ne 0 ] && exit
 
 xvlog '/tools/Xilinx/Vivado/2021.1/data/verilog/src/glbl.v'

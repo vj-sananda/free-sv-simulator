@@ -16,11 +16,11 @@ module system ( input logic clk,rst,
   //Port 0, read port for instructions
   //Port 1, read and write port for data
   //
-  //1024(1K) x 32 bit wide SRAM
-  //dpram #(1024,32) mem
+  //2048(2K) x 32 bit wide SRAM
+  dpram #(2048,32,"MAGIC") mem
 
   //Sparse memory for full 32 bit address space
-  dpram_sparse #(32,30) mem    
+  //dpram_sparse #(32,30) mem    
   (.clk0(clk),
    .clk1(clk),
    
