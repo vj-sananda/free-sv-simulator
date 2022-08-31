@@ -5,10 +5,20 @@
 //Parameters N = Size
 //           DW = Data width
 //           AW = Address width ($clog2(N))
+//
+// Added support for so-called MAGIC memory
+// as defined in MIT6.004.
+// Nothing but allowing read data to appear
+// in the same cycle from any address.
+// This is implementable as a collection of
+// registers with muxing in the front.
+//
 module dpram #( parameter int N = 16, 
-                           int DW = 32,
-                           int AW = $clog2(N) )
-  	(
+                int    DW = 32,
+		string TYPE="REAL",
+                int    AW = $clog2(N)
+		)
+   (
       //Inputs
       input logic clk0,clk1,en0,en1,wen0,wen1,
       input logic [DW-1:0] din0,din1,
@@ -22,22 +32,33 @@ module dpram #( parameter int N = 16,
   bit [DW-1:0] mem [0:N-1];
  
   initial $readmemh("mem.txt",mem);
-  
-  always @(posedge clk0) 
-    if ( en0 ) begin
-      if (wen0)
-        mem[addr0] <= din0;
-      else
-        dout0 <= mem[addr0];
-    end
-    
-  always @(posedge clk1)
-     if( en1) begin
-       if (wen1)
-         mem[addr1] <= din1;
-       else
-         dout1 <= mem[addr1];
-    end
+
+   //Memory write is the same for REAL
+   //and MAGIC memory
+   always @(posedge clk0) 
+     if (en0 & wen0)
+       mem[addr0] <= din0;
+   
+   always @(posedge clk1)
+     if (en1 & wen1)
+       mem[addr1] <= din1;
+
+  generate
+     if (TYPE == "MAGIC") begin:mem_type
+	assign dout0 = mem[addr0];
+	assign dout1 = mem[addr1];
+     end
+     else begin
+ 	always @(posedge clk0)
+	  if (en0 & ~wen0)
+               dout0 <= mem[addr0];
+     
+     	always @(posedge clk1)
+	  if (en1 & ~wen1)
+               dout1 <= mem[addr1];
+	  
+       end // else: !if(TYPE == "MAGIC")
+  endgenerate
     
 endmodule
 

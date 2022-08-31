@@ -43,6 +43,11 @@ module dpram_sparse #(
   always @(posedge clk0) 
     if ( en0 ) begin
       if (wen0)
+	//Had to use a blocking assignment here
+	//Xilinx simulator does not support non-blocking assigns
+	//to associative (sparse) arrays
+	//We would have a race if write and read to the same location
+	//of memory, but this is disallowed by wen0 signal
         mem[addr0] = din0;
       else
         dout0 <= mem[addr0];
