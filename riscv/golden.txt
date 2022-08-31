@@ -1,0 +1,127 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/riscv/riscv.sv" into library work
+INFO: [VRFC 10-311] analyzing module riscv_decode
+INFO: [VRFC 10-311] analyzing module riscv_alu
+INFO: [VRFC 10-311] analyzing module riscv_regfile
+INFO: [VRFC 10-311] analyzing module riscv
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/riscv/system.sv" into library work
+INFO: [VRFC 10-311] analyzing module dpram
+INFO: [VRFC 10-311] analyzing module dpram_sparse
+INFO: [VRFC 10-311] analyzing module system
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/riscv/tb.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb
+Vivado Simulator v2021.1
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2021.1/bin/unwrapped/lnx64.o/xelab --debug all tb 
+Multi-threading is on. Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ns
+Compiling package work.riscv_package
+Compiling module work.dpram_sparse(AW=30)
+Compiling module work.riscv_decode
+Compiling module work.riscv_alu
+Compiling module work.riscv_regfile_default
+Compiling module work.riscv
+Compiling module work.system
+Compiling module work.cb
+Compiling module work.tb
+Built simulation snapshot work.tb
+
+****** Webtalk v2021.1 (64-bit)
+  **** SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source /work/riscv/xsim.dir/work.tb/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/work/riscv/xsim.dir/work.tb/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Wed Aug 31 17:01:14 2022. For additional details about this file, please refer to the WebTalk help file at /tools/Xilinx/Vivado/2021.1/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Wed Aug 31 17:01:14 2022...
+
+****** xsim v2021.1 (64-bit)
+  **** SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/work.tb/xsim_script.tcl
+# xsim {work.tb} -autoloadwcfg -runall
+Time resolution is 1 ns
+run -all
+0:mem.txt:00000033 (rval=1)
+0:mem.txt:00100093 (rval=1)
+0:mem.txt:00108133 (rval=1)
+0:mem.txt:00400193 (rval=1)
+0:mem.txt:401181b3 (rval=1)
+0:mem.txt:00500213 (rval=1)
+0:mem.txt:40120233 (rval=1)
+0:mem.txt:00500313 (rval=1)
+0:mem.txt:00000293 (rval=1)
+0:mem.txt:001282b3 (rval=1)
+0:mem.txt:fe629ee3 (rval=1)
+0:mem.txt:00130333 (rval=1)
+0:mem.txt:70000f93 (rval=1)
+0:mem.txt:00500f13 (rval=1)
+0:mem.txt:01efa223 (rval=1)
+0:mem.txt:004fa383 (rval=1)
+0:mem.txt:001383b3 (rval=1)
+0:mem.txt:001383b3 (rval=1)
+0:mem.txt:87654437 (rval=1)
+0:mem.txt:32140413 (rval=1)
+0:mem.txt:deadc4b7 (rval=1)
+0:mem.txt:7ef48493 (rval=1)
+0:mem.txt:00000517 (rval=1)
+0:mem.txt:0280006f (rval=1)
+0:mem.txt:deadb0b7 (rval=1)
+0:mem.txt:deadb137 (rval=1)
+0:mem.txt:deadb1b7 (rval=1)
+0:mem.txt:deadb237 (rval=1)
+0:mem.txt:deadb2b7 (rval=1)
+0:mem.txt:deadb337 (rval=1)
+0:mem.txt:deadb3b7 (rval=1)
+0:mem.txt:deadb437 (rval=1)
+0:mem.txt:deadb4b7 (rval=1)
+0:mem.txt:feedb5b7 (rval=1)
+415:imm=0x1ffc, pc=0x0000000a, imm[12]=1, offset=0x3fffffff
+475:imm=0x1ffc, pc=0x0000000a, imm[12]=1, offset=0x3fffffff
+475:imm=0x1ffc, pc=0x0000000a, imm[12]=1, offset=0x3fffffff
+535:imm=0x1ffc, pc=0x0000000a, imm[12]=1, offset=0x3fffffff
+535:imm=0x1ffc, pc=0x0000000a, imm[12]=1, offset=0x3fffffff
+595:imm=0x1ffc, pc=0x0000000a, imm[12]=1, offset=0x3fffffff
+595:imm=0x1ffc, pc=0x0000000a, imm[12]=1, offset=0x3fffffff
+655:imm=0x1ffc, pc=0x0000000a, imm[12]=1, offset=0x3fffffff
+-------------------------------
+	x 0 = 0x00000000 (0)
+	x 1 = 0x00000001 (1)
+	x 2 = 0x00000002 (2)
+	x 3 = 0x00000003 (3)
+	x 4 = 0x00000004 (4)
+	x 5 = 0x00000005 (5)
+	x 6 = 0x00000006 (6)
+	x 7 = 0x00000007 (7)
+	x 8 = 0x87654321 (2271560481)
+	x 9 = 0xdeadc7ef (3735930863)
+	x10 = 0x00000058 (88)
+	x11 = 0xfeedb000 (4276989952)
+	x12 = 0xxxxxxxxx (x)
+	x13 = 0xxxxxxxxx (x)
+	x14 = 0xxxxxxxxx (x)
+	x15 = 0xxxxxxxxx (x)
+	x16 = 0xxxxxxxxx (x)
+	x17 = 0xxxxxxxxx (x)
+	x18 = 0xxxxxxxxx (x)
+	x19 = 0xxxxxxxxx (x)
+	x20 = 0xxxxxxxxx (x)
+	x21 = 0xxxxxxxxx (x)
+	x22 = 0xxxxxxxxx (x)
+	x23 = 0xxxxxxxxx (x)
+	x24 = 0xxxxxxxxx (x)
+	x25 = 0xxxxxxxxx (x)
+	x26 = 0xxxxxxxxx (x)
+	x27 = 0xxxxxxxxx (x)
+	x28 = 0xxxxxxxxx (x)
+	x29 = 0xxxxxxxxx (x)
+	x30 = 0x00000005 (5)
+	x31 = 0x00000700 (1792)
+-------------------------------
+$finish called at time : 1095 ns : File "/work/riscv/tb.sv" Line 37
+exit
+INFO: [Common 17-206] Exiting xsim at Wed Aug 31 17:01:36 2022...
